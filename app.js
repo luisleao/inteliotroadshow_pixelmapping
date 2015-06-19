@@ -25,7 +25,7 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 	*/
 
 
-	console.log("ENTRADA ", msg.data[0], msg.data[0]/255));
+	console.log("ENTRADA ", msg.data[0], msg.data[0]/255);
 
 	if (msg.universe == UNIVERSE && msg.length > 0) {
 		if (msg.data[0] == 0) {
