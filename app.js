@@ -14,6 +14,7 @@ pin.write(0);
 
 
 var srv = artnetsrv.listen(6454, function(msg, peer) {
+	/*
 	console.log("-----------------");
 	console.log("Sequence: " + msg.sequence);
 	console.log("Physical: " + msg.physical);
@@ -21,7 +22,10 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 	console.log("Length: " + msg.length);
 	console.log("Data: " + msg.data);
 	console.log("-----------------");
+	*/
 
+
+	console.log("ENTRADA ", msg.data[0], msg.data[0]/255));
 
 	if (msg.universe == UNIVERSE && msg.length > 0) {
 		if (msg.data[0] == 0) {
