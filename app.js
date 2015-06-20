@@ -15,6 +15,7 @@ var pinLed = new mraa.Pwm(3);
 	pinLed.enable(false);
 	pinLed.write(0);
 
+/*
 
 var pinGiro = new mraa.Gpio(5); //setup digital read on pin 5
 	pinGiro.dir(mraa.DIR_OUT); //set the gpio direction to output
@@ -29,7 +30,7 @@ var pinVentilador = new mraa.Gpio(7); //setup digital read on pin 5
 	pinVentilador.write(0); //set the digital pin to low (0)
 
 
-
+*/
 
 var srv = artnetsrv.listen(6454, function(msg, peer) {
 	/*
@@ -58,9 +59,9 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 
 		//GIRO
 
-		pinGiro.write(msg.data[1] >= MINIMO ? 1 : 0);
-		pinEl.write(msg.data[2] >= MINIMO ? 1 : 0);
-		pinVentilador.write(msg.data[3] >= MINIMO ? 1 : 0);
+		//pinGiro.write(msg.data[1] >= MINIMO ? 1 : 0);
+		//pinEl.write(msg.data[2] >= MINIMO ? 1 : 0);
+		//pinVentilador.write(msg.data[3] >= MINIMO ? 1 : 0);
 
 
 		console.log(msg.data[0]/255, Math.round(msg.data[1]/255), Math.round(msg.data[2]/255), Math.round(msg.data[3]/255));
