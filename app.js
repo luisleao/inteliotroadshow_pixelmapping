@@ -9,6 +9,8 @@ var artnetsrv = require('artnet-node/lib/artnet_server');
 
 
 var mraa = require('mraa');
+
+
 var pinLed = new mraa.Pwm(3);
 	pinLed.enable(false);
 	pinLed.write(0);
@@ -61,7 +63,7 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 		pinVentilador.write(msg.data[3] >= MINIMO ? 1 : 0);
 
 
-		console.log(msg.data[0], Math.round(msg.data[1]/255), Math.round(msg.data[2]/255), Math.round(msg.data[3]/255));
+		console.log(msg.data[0]/255, Math.round(msg.data[1]/255), Math.round(msg.data[2]/255), Math.round(msg.data[3]/255));
 
 
 
