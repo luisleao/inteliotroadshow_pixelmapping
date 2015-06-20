@@ -55,12 +55,12 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 
 		//GIRO
 
-		pinGiro.write((int)msg.data[1]/255);
-		pinEl.write((int)msg.data[2]/255);
-		pinVentilador.write((int)msg.data[3]/255);
+		pinGiro.write(Math.round(msg.data[1]/255)));
+		pinEl.write(Math.round(msg.data[2]/255));
+		pinVentilador.write(Math.round(msg.data[3]/255));
 
 
-		console.log((int)msg.data[0]/255, (int)msg.data[1]/255, (int)msg.data[2]/255, (int)msg.data[3]/255);
+		console.log(Math.round(msg.data[0]/255), Math.round(msg.data[1]/255), Math.round(msg.data[2]/255), Math.round(msg.data[3]/255));
 
 
 
