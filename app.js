@@ -55,7 +55,7 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 
 		//GIRO
 
-		pinGiro.write(Math.round(msg.data[1]/255)));
+		pinGiro.write(Math.round(msg.data[1]/255));
 		pinEl.write(Math.round(msg.data[2]/255));
 		pinVentilador.write(Math.round(msg.data[3]/255));
 
