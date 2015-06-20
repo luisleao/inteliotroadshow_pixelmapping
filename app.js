@@ -2,13 +2,14 @@ var UNIVERSE_ATUADORES = 0;
 var UNIVERSE_ENDERECAVEL = 1;
 
 var LED_PIN = 3;
+var MINIMO = 200;
 
 
 var artnetsrv = require('artnet-node/lib/artnet_server');
 
 
 var mraa = require('mraa');
-var pinLed = new mraa.Pwm(LED_PIN);
+var pinLed = new mraa.Pwm(3);
 	pinLed.enable(false);
 	pinLed.write(0);
 
@@ -55,9 +56,9 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 
 		//GIRO
 
-		pinGiro.write(Math.round(msg.data[1]/255));
-		pinEl.write(Math.round(msg.data[2]/255));
-		pinVentilador.write(Math.round(msg.data[3]/255));
+		pinGiro.write(msg.data[1]/255 >= MINIMO ? 1 : 0);
+		pinEl.write(msg.data[2] >= MINIMO ? 1 : 0);
+		pinVentilador.write(msg.data[3] >= MINIMO ? 1 : 0));
 
 
 		console.log(Math.round(msg.data[0]/255), Math.round(msg.data[1]/255), Math.round(msg.data[2]/255), Math.round(msg.data[3]/255));
