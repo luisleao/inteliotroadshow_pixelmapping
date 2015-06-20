@@ -2,7 +2,7 @@ var UNIVERSE_ATUADORES = 0;
 var UNIVERSE_ENDERECAVEL = 1;
 
 var LED_PIN = 3;
-var MINIMO = 200;
+var MINIMO = 230;
 
 
 var artnetsrv = require('artnet-node/lib/artnet_server');
