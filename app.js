@@ -58,7 +58,7 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 
 		//GIRO
 
-		pinGiro.write(msg.data[1]/255 >= MINIMO ? 1 : 0);
+		pinGiro.write(msg.data[1] >= MINIMO ? 1 : 0);
 		pinEl.write(msg.data[2] >= MINIMO ? 1 : 0);
 		pinVentilador.write(msg.data[3] >= MINIMO ? 1 : 0);
 
