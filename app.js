@@ -51,6 +51,7 @@ var srv = artnetsrv.listen(6454, function(msg, peer) {
 
 		//LED
 		if (msg.data[0] == 0) {
+			pinLed.write(0);
 			pinLed.enable(false);
 		} else {
 			pinLed.enable(true);
