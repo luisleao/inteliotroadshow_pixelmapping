@@ -17,11 +17,11 @@ var pinGiro = new mraa.Gpio(5); //setup digital read on pin 5
 	pinGiro.dir(mraa.DIR_OUT); //set the gpio direction to output
 	pinGiro.write(0); //set the digital pin to low (0)
 
-var pinEl = new mraa.Gpio(5); //setup digital read on pin 5
+var pinEl = new mraa.Gpio(6); //setup digital read on pin 5
 	pinEl.dir(mraa.DIR_OUT); //set the gpio direction to output
 	pinEl.write(0); //set the digital pin to low (0)
 
-var pinVentilador = new mraa.Gpio(5); //setup digital read on pin 5
+var pinVentilador = new mraa.Gpio(7); //setup digital read on pin 5
 	pinVentilador.dir(mraa.DIR_OUT); //set the gpio direction to output
 	pinVentilador.write(0); //set the digital pin to low (0)
 
